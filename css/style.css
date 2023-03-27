@@ -1,76 +1,104 @@
-
 :root {
-	--color1: #1abc9c;
-	--color2: #3498db;
-	--color3: #f5f5f5;
-	--color4: #333;
+  --color1: #1abc9c;
+  --color2: #3498db;
+  --color3: #f5f5f5;
+  --color4: #333;
 }
 
-/* Estilos globales */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+/* ---------------------- Parte superior  ----------------------*/
+header {
+  background-color: var(--color1);
+  color: #fff;
+  padding: 20px 0;
+}
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
-body {
-	font-family: Arial, sans-serif;
-	background-color: var(--color3);
+header nav li {
+  margin: 0 10px;
+}
+a {
+  text-decoration: none;
+}
+header a {
+  color: #fff;
+  /* para que no aparesca la linea en los link */
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Color cuando pasas el maouse por encima */
+header nav a:hover {
+  color: var(--color2);
 }
 
 .container {
-	max-width: 100%;
-    height: fit-content ;
-	margin: 0 auto;
-	padding: 0 20px;
+  max-width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Encabezado */
-header {
-	background-color: var(--color1);
-	color: #fff;
-	padding: 20px 0;
+body {
+  /* par que no que de la parte blanca arriba */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--color3);
 }
 
-header h1 {
-	font-size: 3rem;
-	margin-bottom: 20px;
-}
+/* ---------------------- Parte de al medio  ----------------------*/
 
-nav ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: flex-end;
-}
-
-nav li {
-	margin: 0 10px;
-}
-
-nav a {
-	color: #fff;
-	text-decoration: none;
-	font-size: 1.2rem;
-	transition: all 0.3s ease;
-}
-
-nav a:hover {
-	color: var(--primary-color);
+.cuerpo {
+  max-width: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 /* Secciones */
-main section {
-	background-color: #fff;
-	padding: 40px;
-	border-radius: 10px;
-	margin-bottom: 40px;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+.uno,
+.dos,
+.tres,
+.cuatro {
+  
+  background-color: #fff;
+
+  /* borde redondiado */
+  border-radius: 10px;
+}
+
+.uno {
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1;
+}
+.dos {
+  height: 100%;
+  grid-column: 2;
+  grid-row: 1;
+}
+.tres {
+  height: 100%;
+  grid-column: 1;
+  grid-row: 2;
+}
+.cuatro {
+  height: 100%;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 main h2 {
-	font-size: 2.5rem;
-	margin-bottom: 20px;
-	color: var
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var;
 }
