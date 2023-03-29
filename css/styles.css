@@ -14,11 +14,9 @@
   font-family: Arial, sans-serif;
 }
 
-.col-6 {
+.col-5 {
   /* gap in betwen */
-  padding: 1rem !important;
 
-  height: 40vh;
   background-color: var(--color2) !important;
   color: #f5f5f5 !important;
   font-family: Arial, sans-serif;
@@ -26,4 +24,12 @@
 .container{
     grid-column: 1rem !important;
     border: 1rem !important;
+}
+
+a{
+    
+    font-family: Arial, sans-serif !important;
+    text-decoration: none;
+    color: #333;
+
 }
