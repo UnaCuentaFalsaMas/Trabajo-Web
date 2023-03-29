@@ -29,9 +29,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link letra" href="../index.html">Home</a>
-            <a class="nav-link active letra" aria-current="page" href="#">Acerca de nosotros</a>
+            <a class="nav-link letra" aria-current="page" href="acerca.html">Acerca de nosotros</a>
             <a class="nav-link letra" href="cont.html">Contacto</a>
-            <a class="nav-link letra" href="log.html">Log-In</a>
+            <a class="nav-link active letra" href="#">Log-In</a>
           </div>
         </div>
       </div>
@@ -40,17 +40,29 @@
   <!-- Parte de al medio -->
 
   <main>
-    <div class="container text-center">
-      <h1>¿Quienes somos?</h1>
-      <img  class="rounded-circle" src="../source/img/dr felipe.png" alt="">
-      <p>Somos un grupo de estudiantes de la Pontificie Universidad Catolica
-        de Valparaiso que se dedica a la creación de aplicaciones web para
-        la comunidad. Nuestro objetivo es crear aplicaciones que faciliten
-        la vida de las personas.</p>
+    <div class="container d-flex flex-column align-items-center mt-5">
+      <img class="rounded-circle" style="width: 15%;" src="../source/img/felipito.png" alt="">
+      <form style="width:50%">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter email" />
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <br>
+      <a href="reg.html">Registrarse</a>
+    </form>
+
     </div>
-<footer>
-  <div class="oco"></div>
-</footer>
   </main>
 
   <!-- script boostrap -->
