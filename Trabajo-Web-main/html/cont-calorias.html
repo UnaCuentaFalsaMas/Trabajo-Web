@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rutina</title>
+  <!-- boostrap -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+  <!-- css -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- Parte de arriba -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <h1 class="letra">FatFit</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link letra" href="../index.html">Home</a>
+            <a class="nav-link letra" aria-current="page" href="acerca.html">Acerca de nosotros</a>
+            <a class="nav-link letra" href="cont.html">Contacto</a>
+            <a class="nav-link letra" href="log.html">Log-In</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Parte de al medio -->
+  <main>
+    <h1>Calculador de Calorias</h1>
+    <br>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="genero" id="generoF" value="option2">
+      <label class="form-check-label" for="generoF">
+        Femenino
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="genero" id="generoF" value="option3">
+      <label class="form-check-label" for="genero3">
+        Otro
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="edad">Edad</label>
+      <input type="number" class="form-control" id="edad" placeholder="Edad" />
+    </div>
+    <div class="form-group">
+      <label for="altura">Altura</label>
+      <input type="number" class="form-control" id="altura" placeholder="Altura" />
+    </div>
+    <div class="form-group">
+      <label for="peso">Peso</label>
+      <input type="number" class="form-control" id="peso" placeholder="Peso" />
+    </div>
+    <br>
+    <p>Seleccione Nivel De Actividad:</p>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Nivel De Actividad</option>
+      <option value="1">Poco o ningun ejercicio</option>
+      <option value="2">Ejercicio ligero</option>
+      <option value="3">Ejercicio moderado</option>
+      <option value="4">Ejercicio fuerte</option>
+      <option value="5">Ejercicio muy fuerte</option>
+    </select>
+
+    
+  </main>
+  <main></main>
+    <!-- Parte de abajo -->
+    <footer></footer>
+    <!-- boostrap -->
+     <!-- script boostrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+  crossorigin="anonymous"></script>
+</body>
+</html>
