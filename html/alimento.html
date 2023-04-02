@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alimento</title>
+  <title>Alimentación</title>
   <!-- boostrap -->
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,12 +26,9 @@
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link letra" href="../index.html">Home</a>
-            <a class="nav-link letra" aria-current="page" href="acerca.html">Acerca de nosotros</a>
-            <a class="nav-link letra" href="cont.html">Contacto</a>
-            <a class="nav-link letra" href="log.html">Log-In</a>
+            <a class="nav-link letraAlimentacion" href="../html/alimentacion.html">Alimentación Saludable</a>
           </div>
         </div>
       </div>
@@ -39,24 +36,860 @@
   </header>
   <!-- Parte de al medio -->
   <main>
-    <div class="container justify-content-center d-flex align-items-center">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="letra">Manzana</h1>
-          <img src="" alt="">
-          
+    <section class="w-10 p-4 pb-4 d-flex justify-content-center align-items-center flex-column">
+      <div>
+        <div class="input-group">
+          <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Buscar" aria-describedby="search-addon">
+          <button type="button" class="btn btn-outline-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Buscar</font></font></button>
         </div>
-
       </div>
+    </section>
+    
+    
+    <div class="row" style="margin: 5em; justify-content: center;">
+      <!--Manzana-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/manzana.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Manzana</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#manzanaModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="manzanaModal" tabindex="-1" role="dialog" aria-labelledby="manzanaModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (80g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>52</td>
+                          <td>42</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>0,3</td>
+                          <td>0,2</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>0,2</td>
+                          <td>0,2</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hidratos de carbono disponibles (g)</th>
+                          <td>11,4</td>
+                          <td>9,1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Fibra dietética total (g)</th>
+                          <td>2,4</td>
+                          <td>1,9</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>1,0</td>
+                          <td>0,8</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>107,0</td>
+                          <td>85,6</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina A (µ ER)</th>
+                          <td>3,0</td>
+                          <td>0,3%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina C (mg)</th>
+                          <td>4,6</td>
+                          <td>6%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina E (mg ET)</th>
+                          <td>0,2</td>
+                          <td>0,8%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Ac. Fólico (µg)</th>
+                          <td>3,0</td>
+                          <td>1%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>6,0</td>
+                          <td>1%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>0,1</td>
+                          <td>0,6%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
 
+      <!--Naranja-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/naranja.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Naranja</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#naranjaModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="naranjaModal" tabindex="-1" role="dialog" aria-labelledby="naranjaModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (80g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>47</td>
+                          <td>38</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>0,9</td>
+                          <td>0,7</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>0,1</td>
+                          <td>0,1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hidratos de carbono disponibles (g)</th>
+                          <td>9,3</td>
+                          <td>7,4</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Fibra dietética total (g)</th>
+                          <td>2,4</td>
+                          <td>1,9</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>0,0</td>
+                          <td>0,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>181,0</td>
+                          <td>145,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina A (µ ER)</th>
+                          <td>11,0</td>
+                          <td>1%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina C (mg)</th>
+                          <td>53,2</td>
+                          <td>71%/td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina E (mg ET)</th>
+                          <td>0,2</td>
+                          <td>0,8%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Ac. Fólico (µg)</th>
+                          <td>30,0</td>
+                          <td>12%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>40,0</td>
+                          <td>4%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>0,1</td>
+                          <td>0,6%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+      <!--Arroz-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/arroz.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Arroz</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#arrozModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="arrozModal" tabindex="-1" role="dialog" aria-labelledby="arrozModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (105g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>129</td>
+                          <td>135</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>2,66</td>
+                          <td>2,79</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>0,28</td>
+                          <td>0,29</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hidratos de carbono disponibles (g)</th>
+                          <td>27,9</td>
+                          <td>29,3</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Fibra dietética total (g)</th>
+                          <td>0,4</td>
+                          <td>0,42</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>365,0</td>
+                          <td>383,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>35,0</td>
+                          <td>37,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Ac. Fólico (µg)</th>
+                          <td>20,0</td>
+                          <td>21</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>10,0</td>
+                          <td>10,5</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>0,2</td>
+                          <td>0,21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin: 5em; justify-content: center;">
+      <!--Vacuno-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/vacuno.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Vacuno</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#vacunoModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="vacunoModal" tabindex="-1" role="dialog" aria-labelledby="vacunoModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (85g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>288</td>
+                          <td>245</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>26,33</td>
+                          <td>22,38</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>19,54</td>
+                          <td>16,61</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>338,0</td>
+                          <td>326,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>315,0</td>
+                          <td>268,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>18,0</td>
+                          <td>15,3</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>2,6</td>
+                          <td>2,21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <!--pollo-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/pollo.png" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Pollo</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#polloModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="polloModal" tabindex="-1" role="dialog" aria-labelledby="polloModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (98g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>195</td>
+                          <td>191</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>29,55</td>
+                          <td>28,96</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>7,72</td>
+                          <td>7,57</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>82,0</td>
+                          <td>80,36</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>243,0</td>
+                          <td>238,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>15,0</td>
+                          <td>14,7</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>1,3</td>
+                          <td>1,274</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+      <!--Salmon-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/salmon.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Salmón</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#salmonModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="salmonModal" tabindex="-1" role="dialog" aria-labelledby="salmonModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (57g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>182</td>
+                          <td>103,74</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>18,4</td>
+                          <td>10,488</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>12,0</td>
+                          <td>6,954</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>98,0</td>
+                          <td>55,86</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>310,0</td>
+                          <td>176,7</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina B1 (mg)</th>
+                          <td>0,2</td>
+                          <td>0,114</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina B2 (mg)</th>
+                          <td>0,15</td>
+                          <td>0,086</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina B3 (mg)</th>
+                          <td>10,4</td>
+                          <td>5,928</td>
+                        </tr>
+                        <tr>
+                        <tr>
+                          <th scope="row">Vitamina E (mg)</th>
+                          <td>2</td>
+                          <td>1,14</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>9,0</td>
+                          <td>5,13</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>0,7</td>
+                          <td>0,399</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin: 5em; justify-content: center;">
+      <!--Lenteja-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/lenteja.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Lenteja</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#lentejaModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="lentejaModal" tabindex="-1" role="dialog" aria-labelledby="lentejaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (98g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>165</td>
+                          <td>162</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>8,39</td>
+                          <td>8,22</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>6,76</td>
+                          <td>6,62</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hidratos de carbono disponibles (g)</th>
+                          <td>18,73</td>
+                          <td>18,36</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Fibra dietética total (g)</th>
+                          <td>8.0</td>
+                          <td>7,84</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>220,0</td>
+                          <td>216,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>343,0</td>
+                          <td>336,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>19,0</td>
+                          <td>18,62</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>3,3</td>
+                          <td>3,234</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <!--Poroto-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/poroto.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Poroto</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#porotoModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="porotoModal" tabindex="-1" role="dialog" aria-labelledby="porotoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (60g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>333</td>
+                          <td>200</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>23,4</td>
+                          <td>14,0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>0,9</td>
+                          <td>0,5</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hidratos de carbono disponibles (g)</th>
+                          <td>45,1</td>
+                          <td>27,1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Fibra dietética total (g)</th>
+                          <td>15.2</td>
+                          <td>9,1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>16,0</td>
+                          <td>9,6</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>1,393,0</td>
+                          <td>0,836</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>442,0</td>
+                          <td>265,2</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>10,4</td>
+                          <td>6,24</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+      <!--Lechuga-->
+      <div class="card p-2" style="width: 30em; margin: 1em;">
+        <img src="../source/img/lechuga.jpg" class="card-img-top just imagen-alimento" alt="...">
+        <div class="card-body">
+          <h3 class="card-title text-center">Lechuga</h3>
+          
+          <!-- Button trigger modal -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#lechugaModal">
+              Información nutricional
+            </button>  
+          </div>     
+          <!-- Modal -->
+          <div class="modal fade" id="lechugaModal" tabindex="-1" role="dialog" aria-labelledby="lechugaModalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title">Información nutricional:</h5>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="table-light">
+                          <th scope="col"></th>
+                          <th scope="col">100g</th>
+                          <th scope="col">1 porción (80g)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Energía (Kcal)</th>
+                          <td>13</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Proteínas (g)</th>
+                          <td>1,4</td>
+                          <td>1,1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Grasa total (g)</th>
+                          <td>0,2</td>
+                          <td>0,2</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hidratos de carbono disponibles (g)</th>
+                          <td>1,1</td>
+                          <td>0,9</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Fibra dietética total (g)</th>
+                          <td>1,1</td>
+                          <td>0,9</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Sodio (mg)</th>
+                          <td>5,0</td>
+                          <td>0,9</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Potasio (mg)</th>
+                          <td>238,0</td>
+                          <td>190,4</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina A (µ ER)</th>
+                          <td>166,0	</td>
+                          <td>17%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina C (mg)</th>
+                          <td>3,7</td>
+                          <td>5%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Vitamina E (mg ET)</th>
+                          <td>0,2</td>
+                          <td>0,8%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Ac. Fólico (µg)</th>
+                          <td>73,0</td>
+                          <td>29%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Calcio (mg)</th>
+                          <td>35,0</td>
+                          <td>4%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Hierro (mg)</th>
+                          <td>1,2</td>
+                          <td>7%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
-    <!-- Parte de abajo -->
-    <footer></footer>
-    <!-- boostrap -->
-     <!-- script boostrap -->
+  <!-- Parte de abajo -->
+  <footer>
+
+  </footer>
+  <!-- boostrap -->
+    <!-- script boostrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
   crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>
