@@ -1,11 +1,5 @@
-:root {
-  --color1: #1abc9c;
-  --color2: #3498db;
-  --color3: #f5f5f5;
-  --color4: #333;
-}
 .bg-body-tertiary {
-  background-color: var(--color1) !important;
+  background-color: #1abc9c !important;
   color: #f5f5f5 !important;
 }
 
@@ -14,7 +8,7 @@
   font-family: Arial, sans-serif;
 }
 
-.letraAlimentacion{
+.letraAlimentacion {
   font-size: xx-large;
   color: #f5f5f5;
   font-family: Arial, sans-serif;
@@ -26,24 +20,24 @@
 
 .col-5 {
   /* gap in betwen */
-
-  background-color: var(--color2) !important;
+  background-color: #3498db !important;
   color: #f5f5f5 !important;
   font-family: Arial, sans-serif;
 }
-.container{
-    grid-column: 1rem !important;
-    border: 1rem !important;
+
+.container {
+  grid-column: 1rem !important;
+  border: 1rem !important;
 }
 
-a{
-    
-    font-family: Arial, sans-serif !important;
-    text-decoration: none;
-    color: #333;
-
+a {
+  font-family: Arial, sans-serif !important;
+  text-decoration: none;
+  color: #333;
 }
 
-.imagen-alimento{
+.imagen-alimento {
   height: 15em;
 }
+
+/*# sourceMappingURL=styles.css.map */
