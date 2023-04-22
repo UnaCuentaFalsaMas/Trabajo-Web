@@ -4,7 +4,6 @@ document.getElementById('submit').addEventListener('click', function(e){
     var altura = document.getElementById('altura').value;
     var peso = document.getElementById('peso').value;
     calculaImc(altura, peso);
-    console.log(altura+'\n'+peso);
 });
 
 // calculate imc 
