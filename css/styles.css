@@ -40,4 +40,8 @@ a {
   height: 15em;
 }
 
+label.error {
+  color: red;
+}
+
 /*# sourceMappingURL=styles.css.map */
