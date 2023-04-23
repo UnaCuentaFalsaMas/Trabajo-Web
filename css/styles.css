@@ -44,4 +44,19 @@ label.error {
   color: red;
 }
 
+.footer{
+  display: flex;
+  position: absolute;
+  background-color:#1abc9c;
+  width: 100%;
+  bottom: 0%;
+}
+
+.footer img{
+  height: 8em;
+  width: 12em;
+}
+
+
+
 /*# sourceMappingURL=styles.css.map */
