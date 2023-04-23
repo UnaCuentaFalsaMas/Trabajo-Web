@@ -6,10 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contador Calorias</title>
-  <!-- boostrap -->
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+  
+
+  <!-- bootstrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+  <!-- jquery js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- validation js -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <!-- bootstrap js-->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- css -->
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
@@ -31,8 +40,7 @@
             <a class="nav-link letra" href="../index.html">Home</a>
             <a class="nav-link letra" aria-current="page" href="acerca.html">Acerca de nosotros</a>
             <a class="nav-link letra" href="cont.html">Contacto</a>
-            <a class="nav-link letra" href="log.html">Acceder</a>
-            <a class="nav-link letra" href="reg.html">Registro</a>
+            <a class="nav-link letra" href="log.html">Log-In</a>
           </div>
         </div>
       </div>
@@ -40,55 +48,61 @@
   </header>
   <!-- Parte de al medio -->
   <main>
-    <div class="justify-content-center m-auto pt-5" style="width: 50%;
-    ">
-    <h1>Calculador de Calorias</h1>
-    <br>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="genero" id="generoF" value="option2">
-      <label class="form-check-label" for="generoM">
-        Masculino
-
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="genero" id="generoF" value="option3">
-      <label class="form-check-label" for="generoF">
-        Femenino
-      </label>
-    </div>
-    <div class="form-group">
-      <label for="edad">Edad</label>
-      <input type="number" class="form-control" id="edad" placeholder="Edad" />
-    </div>
-    <div class="form-group">
-      <label for="altura">Altura</label>
-      <input type="number" class="form-control" id="altura" placeholder="Altura" />
-    </div>
-    <div class="form-group">
-      <label for="peso">Peso</label>
-      <input type="number" class="form-control" id="peso" placeholder="Peso" />
-    </div>
-    <br>
-    <p>Seleccione Nivel De Actividad:</p>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Nivel De Actividad</option>
-      <option value="1">Poco o ningun ejercicio</option>
-      <option value="2">Ejercicio ligero</option>
-      <option value="3">Ejercicio moderado</option>
-      <option value="4">Ejercicio fuerte</option>
-      <option value="5">Ejercicio muy fuerte</option>
-    </select>
-
+    <div class="justify-content-center m-auto pt-5" style="width: 50%;">
+      <h1>Calculador de Calorías</h1>
+      <form action="" id="validacion" name="validacion">
+        <br>     
+          <div>
+            <label for="genero">Seleccione género: </label>
+            <select class="form-select" id="genero" name="genero" aria-label="Default select example">
+              <option selected></option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad" name="edad" placeholder="Ej: 25" />
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="altura">Altura</label>
+            <input type="number" class="form-control" id="altura" name="altura" placeholder="Ej: 178" />
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="peso">Peso</label>
+            <input type="number" class="form-control" id="peso" name="peso" placeholder="Ej: 63.5" />
+          </div>
+        <br>
+        <div>
+          <label for="actividad">Seleccione nivel de actividad: </label>
+          <select class="form-select" id="actividad" name="actividad" aria-label="Default select example">
+            <option selected></option>
+            <option value="1.2">Poco o ningún ejercicio</option>
+            <option value="1.375">Ejercicio ligero</option>
+            <option value="1.55">Ejercicio moderado</option>
+            <option value="1.725">Ejercicio fuerte</option>
+            <option value="1.9">Ejercicio muy fuerte</option>
+          </select>
+        </div>
+        <br>
+        <div >
+          <input type="submit" class="btn btn-outline-dark" value="Calcular" id="submit">
+        </div>
+        <br>
+          <p>Debe consumir las siguientes calorías para los datos ingresados:</p>
+          <div id="resultado">0</div>
+      </form>
     </div>
   </main>
   <main></main>
     <!-- Parte de abajo -->
     <footer></footer>
     <!-- boostrap -->
-     <!-- script boostrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-  crossorigin="anonymous"></script>
+    <!-- script boostrap -->
+  <script src="../js/calorias.js"></script>
+  
 </body>
 </html>
