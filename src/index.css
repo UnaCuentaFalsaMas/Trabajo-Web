@@ -1,0 +1,80 @@
+.bg-body-tertiary {
+  background-color: #1abc9c !important;
+  color: #f5f5f5 !important;
+}
+
+
+/* Nabvar style */
+header {
+  background-color: #1abc9c !important;
+  color: #f5f5f5 !important;
+  font-family: Arial, sans-serif !important;
+}
+.nav-link {
+  color: #f5f5f5 !important;
+  font-family: Arial, sans-serif !important;
+}
+.nav-link img {
+  height: 2em;
+  width: auto;
+}
+.active {
+  color: #0f0f0f !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.navbar-toggler{
+  border: none !important;
+  outline: none !important;
+}
+
+
+
+.letraAlimentacion {
+  font-size: xx-large;
+
+  font-family: Arial, sans-serif;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.col-5 {
+  background-color: #3498db !important;
+  color: #f5f5f5 !important;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  grid-column-gap: 1rem !important;
+  border: 1rem !important;
+}
+
+.imagen-alimento {
+  height: 15em;
+}
+
+label.error {
+  color: red;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1abc9c;
+  height: 4em;
+}
+
+footer img {
+  height: 4em;
+  width: auto;
+}
+
+body main {
+  flex-grow: 1;
+  padding-bottom: 4em;
+}
