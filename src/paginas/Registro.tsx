@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 function Registro() {
@@ -139,7 +139,9 @@ function Registro() {
               placeholder="Peso"
             />
           </Form.Group>
-          <Button type="submit" variant="primary">Registrarse</Button>
+          <Button type="submit" variant="primary">
+            Registrarse
+          </Button>
         </Form>
       </div>
     </main>
@@ -147,5 +149,3 @@ function Registro() {
 }
 
 export default Registro;
-
-             
