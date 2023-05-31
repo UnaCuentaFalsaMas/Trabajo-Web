@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 function Registro() {
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: { currentTarget: any; preventDefault: () => void; stopPropagation: () => void; }) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
