@@ -8,6 +8,7 @@ import Pie from './componentes/Pie';
 import Accerder from './paginas/Acceder';
 import Registro from './paginas/Registro';
 import Comidas from './paginas/Comidas';
+import Calculadora from './paginas/Calculadora';
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/comidas" element={<Comidas />} />
+        <Route path="/calculadora" element={<Calculadora />} />
         
       </Routes>
       <Pie />

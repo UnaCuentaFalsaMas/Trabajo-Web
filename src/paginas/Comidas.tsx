@@ -60,7 +60,7 @@ const Comidas = () => {
 
   return (
     <div>
-      <h1>Comidas juan</h1>
+      <h1>Valor nutricional</h1>
       <input type="text" id="busqueda" placeholder="Buscar comida" />
       <button onClick={handleBuscar}>Buscar</button>
       {error && <p>{error}</p>}
