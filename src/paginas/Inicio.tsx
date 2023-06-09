@@ -1,37 +1,23 @@
 
-import Tarjeta from '../componentes/Tarjeta';
+
 import Logo from '../assets/img/logo1.jpeg';
 function Inicio() {
   return (
     <>
-      <main className='m-4 grid gap-12 bg-slat-100 grid-col-2 flex'>
-        <h1>try</h1>
-        <br />
-        <Tarjeta
-          titulo={'Valor nutricional'}
-          link={'/comidas'}
-          texto={'Verifique el valor nutricional de sus comidas'}
-          img={Logo}
-        />
-                <Tarjeta
-          titulo={'Valor nutricional'}
-          link={'/comidas'}
-          texto={'Verifique el valor nutricional de sus comidas'}
-          img={Logo}
-        />
-                <Tarjeta
-          titulo={'Valor nutricional'}
-          link={'/comidas'}
-          texto={'Verifique el valor nutricional de sus comidas'}
-          img={Logo}
-        />
-                <Tarjeta
-          titulo={'Valor nutricional'}
-          link={'/comidas'}
-          texto={'Verifique el valor nutricional de sus comidas'}
-          img={Logo}
-        />
-      </main>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <img src={Logo} alt="Logo" />
+          </div>
+          <div className="col">
+            <h1>Inicio</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, ipsum commodi deserunt quasi tempora fugit dolorem pariatur, aperiam laborum sit corrupti sunt cumque repellat iure, fuga non odit dolor neque!
+            </p>
+          </div>
+        </div>
+      </div>
+
     </>
   );
 }

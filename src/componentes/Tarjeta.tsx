@@ -1,16 +1,33 @@
-import { Link } from 'react-router-dom';
-function Tarjeta({ img, titulo, texto, link }) {
+type Nutrientes = {
+  ENERC_KCAL: number;
+  PROCNT: number;
+  FAT: number;
+  CHOCDF: number;
+};
+
+type Alimento = {
+  foodId: string;
+  label: string;
+  knowAs: string;
+  nutrients: Nutrientes;
+};
+
+type TarjetaProps = {
+  alimento: Alimento;
+};
+
+const Tarjeta = ({ alimento }: TarjetaProps) => {
   return (
-    <div className="bg-white ronded-2x1">
-      <img src={img} className= "ronded-md w-1/4" alt="..." />
-      <div className="card-body p-12">
-        <h5 className="text-lg font-bold my-2">{titulo}</h5>
-        <p className="card-text">{texto}</p>
-        <Link to={link} className="btn btn-primary">
-          Ir a {titulo}
-        </Link>
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">{alimento.label}</h5>
+        <p className="card-text">Energía: {alimento.nutrients.ENERC_KCAL}</p>
+        <p className="card-text">Proteína: {alimento.nutrients.PROCNT}</p>
+        <p className="card-text">Grasa: {alimento.nutrients.FAT}</p>
+        <p className="card-text">Carbohidratos: {alimento.nutrients.CHOCDF}</p>
       </div>
     </div>
   );
-}
+};
+
 export default Tarjeta;
