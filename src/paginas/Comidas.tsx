@@ -42,7 +42,7 @@ const Comidas = () => {
       .then(function (response) {
         console.log(response);
         setComidas([]);
-        setComidas(response.data.hints.map((hint) => hint.food));
+        setComidas(response.data.hints.map((hint: { food: any; }) => hint.food));
         setError('');
       })
       .catch(function (error) {
@@ -59,19 +59,17 @@ const Comidas = () => {
   }
 
   return (
-    <div>
+    <div className='flex-container text-center'>
       <h1>Valor nutricional</h1>
       <input type="text" id="busqueda" placeholder="Buscar comida" />
-      <button onClick={handleBuscar}>Buscar</button>
+      <button className='btn btn-outline-dark' onClick={handleBuscar}>Buscar</button>
       {error && <p>{error}</p>}
 
       <div className="album py-5 bg-light">
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
             {comidas.map((comida) => (
-              <div className="col" key={comida.foodId}>
-                <Tarjeta alimento={comida} />
-              </div>
+              <div className="col" key={comida.foodId}><Tarjeta alimento={comida} /></div>
             ))}
           </div>
         </div>

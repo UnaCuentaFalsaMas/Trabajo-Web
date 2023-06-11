@@ -4,16 +4,59 @@ import { Form, Button } from 'react-bootstrap';
 function Registro() {
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event: { currentTarget: any; preventDefault: () => void; stopPropagation: () => void; }) => {
+  const handleSubmit = async (event: { preventDefault: () => void; stopPropagation: () => void; currentTarget: any; }) => {
+    event.preventDefault();
+    event.stopPropagation();
+
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+    const datoContrasenia1 = document.getElementById('password') as HTMLInputElement;
+    const datoContrasenia2 = document.getElementById('password2') as HTMLInputElement;
+
+    if (form.checkValidity() === false || datoContrasenia1.value !== datoContrasenia2.value) {
+      if (datoContrasenia1.value !== datoContrasenia2.value) {
+        setValidated(true);
+      }
+      return;
     }
 
-    setValidated(true);
+    const data = {
+      nombre: form.elements.nombre.value,
+      apellido: form.elements.apellido.value,
+      usuario: form.elements.usuario.value,
+      mail: form.elements.mail.value,
+      password: form.elements.password.value,
+      genero: form.elements.genero.value,
+      edad: form.elements.edad.value,
+      altura: form.elements.altura.value,
+      peso: form.elements.peso.value,
+    };
+
+    try {
+      const response = await fetch('http://localhost:3000/api/registros', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setValidated(true);
+        console.log('Registro guardado exitosamente');
+
+        // Restablecer los valores de los campos
+        resetFields(form);
+      } else {
+        console.error('Error al guardar el registro');
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
   };
 
+  const resetFields = (form: { reset: () => void; }) => {
+    form.reset();
+  };
   return (
     <main>
       <br />
@@ -95,18 +138,21 @@ function Registro() {
               name="genero"
               id="generoM"
               label="Masculino"
+              value="Masculino"
             />
             <Form.Check
               type="radio"
               name="genero"
               id="generoF"
               label="Femenino"
+              value="Femenino"
             />
             <Form.Check
               type="radio"
               name="genero"
               id="generoOtro"
               label="Otro"
+              value="Otro"
             />
           </Form.Group>
           <Form.Group>
@@ -139,7 +185,8 @@ function Registro() {
               placeholder="Peso"
             />
           </Form.Group>
-          <Button type="submit" variant="primary">
+          <br />
+          <Button type="submit" variant="btn btn-outline-dark">
             Registrarse
           </Button>
         </Form>

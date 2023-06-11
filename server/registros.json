@@ -1,0 +1,112 @@
+[
+  {
+    "nombre": "John",
+    "apellido": "Doe",
+    "usuario": "johndoe",
+    "mail": "johndoe@example.com",
+    "password": "password123",
+    "genero": "Masculino",
+    "edad": 25,
+    "altura": 180,
+    "peso": 75
+  },
+  {
+    "nombre": "Jane",
+    "apellido": "Smith",
+    "usuario": "janesmith",
+    "mail": "janesmith@example.com",
+    "password": "password456",
+    "genero": "Femenino",
+    "edad": 30,
+    "altura": 165,
+    "peso": 60
+  },
+  {
+    "nombre": "Felipe",
+    "apellido": "Gonzalez",
+    "usuario": "asdfasd",
+    "mail": "gonzalezfelipe6542@gmail.com",
+    "password": "123456",
+    "genero": "Masculino",
+    "edad": "10",
+    "altura": "165",
+    "peso": "67"
+  },
+  {
+    "nombre": "Felipe",
+    "apellido": "Gonzalez",
+    "usuario": "asdfasd",
+    "mail": "gonzalezfelipe6542@gmail.com",
+    "password": "123456",
+    "genero": "Masculino",
+    "edad": "10",
+    "altura": "165",
+    "peso": "67"
+  },
+  {
+    "nombre": "Felipe",
+    "apellido": "Gonzalez",
+    "usuario": "asdfasdf",
+    "mail": "gonzalezfelipe6542@gmail.com",
+    "password": "123456",
+    "genero": "Masculino",
+    "edad": "19",
+    "altura": "165",
+    "peso": "67"
+  },
+  {
+    "nombre": "Felipe",
+    "apellido": "Gonzalez",
+    "usuario": "asdfasdf",
+    "mail": "gonzalezfelipe6542@gmail.com",
+    "password": "123456",
+    "genero": "Masculino",
+    "edad": "19",
+    "altura": "165",
+    "peso": "67"
+  },
+  {
+    "nombre": "Felipe",
+    "apellido": "Gonzalez",
+    "usuario": "asdfasdfasdfasdfasfasdf",
+    "mail": "gonzalezfelipe6542@gmail.com",
+    "password": "123456",
+    "genero": "Masculino",
+    "edad": "19",
+    "altura": "165",
+    "peso": "67"
+  },
+  {
+    "nombre": "Felipe",
+    "apellido": "Gonzalez",
+    "usuario": "asdfasdfasdfasdf",
+    "mail": "gonzalezfelipe6542@gmail.com",
+    "password": "123456",
+    "genero": "Masculino",
+    "edad": "19",
+    "altura": "165",
+    "peso": "67"
+  },
+  {
+    "nombre": "Felipito",
+    "apellido": "Chavez",
+    "usuario": "aquilesdiost",
+    "mail": "felipe.chavez.c@mail.pucv.cl",
+    "password": "123456",
+    "genero": "Femenino",
+    "edad": "22",
+    "altura": "177",
+    "peso": "76"
+  },
+  {
+    "nombre": "felipe",
+    "apellido": "Chavez",
+    "usuario": "s123123213123123",
+    "mail": "a@a",
+    "password": "hola",
+    "genero": "Otro",
+    "edad": "30",
+    "altura": "150",
+    "peso": "78"
+  }
+]

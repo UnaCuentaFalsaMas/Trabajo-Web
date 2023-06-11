@@ -9,6 +9,9 @@ import Accerder from './paginas/Acceder';
 import Registro from './paginas/Registro';
 import Comidas from './paginas/Comidas';
 import Calculadora from './paginas/Calculadora';
+import Calorias from './paginas/Calorias';
+import Ejercicios from './paginas/Ejercicios';
+
 function App() {
   return (
     <>
@@ -23,6 +26,8 @@ function App() {
         <Route path="/registro" element={<Registro />} />
         <Route path="/comidas" element={<Comidas />} />
         <Route path="/calculadora" element={<Calculadora />} />
+        <Route path="/calorias" element={<Calorias />} />
+        <Route path="/ejercicios" element={<Ejercicios />} />
         
       </Routes>
       <Pie />

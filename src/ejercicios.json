@@ -1,0 +1,127 @@
+[
+{
+    "id": 1,
+    "imagen": "./src/assets/img/biceps con mancuerna.jpg",
+    "nombre": "Biceps con mancuerna"
+},
+{
+    "id": 2,
+    "imagen": "./src/assets/img/bicep martillo.jpg",
+    "nombre": "Biceps martillo"
+},
+{
+    "id": 3,
+    "imagen": "./src/assets/img/biceps con mancuerna.jpg",
+    "nombre": "Biceps con mancuerna"
+},
+{
+    "id": 4,
+    "imagen": "./src/assets/img/bicep banco scott.png",
+    "nombre": "Biceps en banco scott"
+},
+{
+    "id": 5,
+    "imagen": "./src/assets/img/bicep apoyado en pierna.jpg",
+    "nombre": "Biceps apoyado en pierna"
+},
+{
+    "id": 6,
+    "imagen": "./src/assets/img/press de banca con barra.png",
+    "nombre": "Press de banca con barra"
+},
+{
+    "id": 7,
+    "imagen": "./src/assets/img/press de banca con mancuerna.png",
+    "nombre": "Press de banca con mancuerna"
+},
+{
+    "id": 8,
+    "imagen": "./src/assets/img/press de banca inclinado.png",
+    "nombre": "Press de banca inclinado"
+},
+{
+    "id": 9,
+    "imagen": "./src/assets/img/press militar con mancuerna.jpg",
+    "nombre": "Press militar con mancuerna"
+},
+{
+    "id": 10,
+    "imagen": "./src/assets/img/press militar con barra.png",
+    "nombre": "Press militar con barra"
+},
+{
+    "id": 11,
+    "imagen": "./src/assets/img/sentadilla.jpg",
+    "nombre": "Sentadilla"
+},
+{
+    "id": 12,
+    "imagen": "./src/assets/img/prensa.jpg",
+    "nombre": "Prensa"
+},
+{
+    "id": 13,
+    "imagen": "./src/assets/img/peso muerto.png",
+    "nombre": "Peso muerto"
+},
+{
+    "id": 14,
+    "imagen": "./src/assets/img/estocada.jpg",
+    "nombre": "Estocada"
+},
+{
+    "id": 15,
+    "imagen": "./src/assets/img/elevacion de talones.png",
+    "nombre": "Elevacion de talones"
+},
+{
+    "id": 16,
+    "imagen": "./src/assets/img/remo con barra.jpg",
+    "nombre": "Remo con barra"
+},
+{
+    "id": 17,
+    "imagen": "./src/assets/img/remo en banca.png",
+    "nombre": "Remo en banca"
+},
+{
+    "id": 18,
+    "imagen": "./src/assets/img/remo en polea.png",
+    "nombre": "Remo en polea"
+},
+{
+    "id": 19,
+    "imagen": "./src/assets/img/curl abdominal.png",
+    "nombre": "Crunch abdominal"
+},
+{
+    "id": 20,
+    "imagen": "./src/assets/img/plancha.jpg",
+    "nombre": "Plancha"
+},
+{
+    "id": 21,
+    "imagen": "./src/assets/img/elevacion de piernas.jpg",
+    "nombre": "Elevacion de piernas"
+},
+{
+    "id": 22,
+    "imagen": "./src/assets/img/abdominales en barra.png",
+    "nombre": "Abdominales en barra"
+},
+{
+    "id": 23,
+    "imagen": "./src/assets/img/dominadas.jpg",
+    "nombre": "Dominadas"
+},
+{
+    "id": 24,
+    "imagen": "./src/assets/img/fondos.jpg",
+    "nombre": "Fondos"
+},
+{
+    "id": 25,
+    "imagen": "./src/assets/img/flexiones de brazos.png",
+    "nombre": "flexiones de brazos"
+}
+]
