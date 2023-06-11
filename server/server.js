@@ -26,7 +26,7 @@ app.post('/api/registros', (req, res) => {
       console.error('Error al guardar los datos:', err);
       res.status(500).json({ message: 'Error al guardar los datos' });
     } else {
-      res.status(201).json({ message: 'Registro guardado exitosamente' });
+      res.status(200).json({ message: 'Registro guardado exitosamente' });
     }
   });
 });
