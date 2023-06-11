@@ -30,6 +30,7 @@ function BuscadorEjercicios() {
   };
 
   return (
+    <main>
     <div className="container text-center">
       
       <h1>Buscador de Ejercicios</h1>
@@ -71,6 +72,7 @@ function BuscadorEjercicios() {
         ))}
       </div>
     </div>
+    </main>
   );
 }
 

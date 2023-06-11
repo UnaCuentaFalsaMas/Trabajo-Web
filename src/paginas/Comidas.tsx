@@ -59,6 +59,7 @@ const Comidas = () => {
   }
 
   return (
+    <main>
     <div className='flex-container text-center'>
       <h1>Valor nutricional</h1>
       <input type="text" id="busqueda" placeholder="Buscar comida" />
@@ -75,6 +76,7 @@ const Comidas = () => {
         </div>
       </div>
     </div>
+    </main>
   );
 };
 

@@ -1,6 +1,6 @@
 function Contacto() {
   return (
-    <>
+    
       <main>
         <div className="container">
           <div className="row">
@@ -27,7 +27,7 @@ function Contacto() {
           </div>
         </div>
       </main>
-    </>
+    
   );
 }
 

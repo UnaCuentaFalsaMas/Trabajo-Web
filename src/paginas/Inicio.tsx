@@ -8,7 +8,7 @@ import ACC from '../componentes/ACC';
 
 function Inicio() {
   return (
-    <>
+    <main>
       <div className="container text-center ">
         <div className="row justify-content-center">
               <ACC
@@ -40,7 +40,7 @@ function Inicio() {
         </div>
       </div>
 
-    </>
+    </main>
   );
 }
 
