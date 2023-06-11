@@ -42,7 +42,7 @@ function Registro() {
           },
         })
         .then((response) => {
-          if (response.status === 200) {
+          if (response.status === 201) {
             setValidated(true);
             console.log('Registro guardado exitosamente');
             form.reset();
