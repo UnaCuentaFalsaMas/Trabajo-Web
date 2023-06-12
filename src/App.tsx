@@ -11,6 +11,7 @@ import Comidas from './paginas/Comidas';
 import Calculadora from './paginas/Calculadora';
 import Calorias from './paginas/Calorias';
 import Ejercicios from './paginas/Ejercicios';
+import Recetas from './paginas/Recetas';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/calculadora" element={<Calculadora />} />
         <Route path="/calorias" element={<Calorias />} />
         <Route path="/ejercicios" element={<Ejercicios />} />
-        
+        <Route path="/recetas" element={<Recetas />} />
       </Routes>
       <Pie />
     </>

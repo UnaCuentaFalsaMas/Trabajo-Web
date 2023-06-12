@@ -52,23 +52,23 @@ function Calculadora() {
         </Form>
         
         <h2 id="resultado">
-          {resultado !== null && resultado < 18.5 ? 'Tu indice de masa corporal es: ' : ""}
+          {resultado !== null && resultado < 18.5 ? 'Tu índice de masa corporal es: ' : ""}
           {resultado !== null && resultado < 18.5 ? resultado.toFixed(2) : ""}
           {resultado !== null && resultado < 18.5 ? <div><br /><img src="./src/assets/img/bajo peso.png" alt="" /></div> : ""}
 
-          {resultado !== null && resultado >= 18.5 && resultado < 25 ? 'Tu indice de masa corporal es: ' : ""}
+          {resultado !== null && resultado >= 18.5 && resultado < 25 ? 'Tu índice de masa corporal es: ' : ""}
           {resultado !== null && resultado >= 18.5 && resultado < 25 ? resultado.toFixed(2) : ""}
           {resultado !== null && resultado >= 18.5 && resultado < 25 ? <div><br /><img src="./src/assets/img/saludable.png" alt="" /></div> : ""}
 
-          {resultado !== null && resultado >= 25 && resultado < 30 ? 'Tu indice de masa corporal es: ' : ""}
+          {resultado !== null && resultado >= 25 && resultado < 30 ? 'Tu índice de masa corporal es: ' : ""}
           {resultado !== null && resultado >= 25  && resultado < 30 ? resultado.toFixed(2) : ""}
           {resultado !== null && resultado >= 25  && resultado < 30 ? <div><br /><img src="./src/assets/img/sobrepeso.png" alt="" /></div> : ""}
 
-          {resultado !== null && resultado >= 30 && resultado < 40 ? 'Tu indice de masa corporal es: ' : ""}
+          {resultado !== null && resultado >= 30 && resultado < 40 ? 'Tu índice de masa corporal es: ' : ""}
           {resultado !== null && resultado >= 30 && resultado < 40 ? resultado.toFixed(2) : ""}
           {resultado !== null && resultado >= 30 && resultado < 40 ? <div><br /><img src="./src/assets/img/obesidad.png" alt="" /></div> : ""}
 
-          {resultado !== null && resultado > 40 ? 'Tu indice de masa corporal es: ' : ""}
+          {resultado !== null && resultado > 40 ? 'Tu índice de masa corporal es: ' : ""}
           {resultado !== null && resultado > 40 ? resultado.toFixed(2) : ""}
           {resultado !== null && resultado > 40 ? <div><br /><img src="./src/assets/img/obesidad severa.png" alt="" /></div> : ""}
         </h2>

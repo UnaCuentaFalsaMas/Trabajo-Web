@@ -11,7 +11,7 @@ function Contacto() {
           <div className="row">
             <div className="col-12">
               <p>
-                Si tienes alguna duda o sugerencia, puedes contactarnos a traves
+                Si tienes alguna duda o sugerencia, puedes contactarnos a través
                 de los siguientes medios:
               </p>
             </div>

@@ -5,7 +5,7 @@ import axios from 'axios';
 function Registro() {
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: { preventDefault: () => void; stopPropagation: () => void; currentTarget: any; }) => {
     event.preventDefault();
     event.stopPropagation();
     const form = event.currentTarget;

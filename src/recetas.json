@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nombre": "Berenjena rellena",
+        "imagen": "./src/assets/img/berenjena_rellena.jpg",
+        "titulo": "Ingredientes (2 porciones):",
+        "ingredientes": "2 berenjenas;1 pimiento rojo;1 pimiento verde;1 calabacín;1 cebollín;100 ml de salsa de tomate;4 huevos;50 gr de queso rallado;Aceite y sal",
+        "preparacion": "Paso 1. Lava bien las berenjenas y pártelas por la mitad a lo largo. Vacíalas y cuécelas 5 minutos al vapor. Ponlas boca abajo para que suelten el exceso de líquido.;Paso 2. Lava toda la verdura y córtala en dados.;Paso 3. Sofríe la cebolleta y los pimientos durante 10 minutos en una cazuela con aceite. Agrega la berenjena y calabacín y déjalo 10 minutos más. Sazona, incorpora la salsa de tomate, mezcla y retira del fuego. Precalienta el horno a 200 °C.;Paso 4. Rellena las medias berenjenas con las verduras y ponlas en una bandeja. Casca un huevo sobre cada una y espolvoréalas con el queso.;Paso 5. Hornéalas hasta que el huevo se cuaje y sírvelas."
+    },
+    {
+        "id": 2,
+        "nombre": "Merluza al vapor a la gallega",
+        "imagen": "./src/assets/img/merluza-al-vapor-a-la-gallega.jpg",
+        "titulo": "Ingredientes (4 porciones):",
+        "ingredientes": "700 g de merluza en rodajas;3 ajos, 1 manojo de espárragos verdes;400 g de patatas para vapor;200 g de guisantes congelados;3 pimientos pequeños de colores;Pimentón dulce, 1 hoja de laurel, aceite, sal, pimienta blanca",
+        "preparacion": "Paso 1. Pelar y lavar las patatas. Retirar el final del tallo de los espárragos, lavarlos y escurrirlos. Limpiar los pimientos, lavarlos y cortarlos en rodajas de ½ cm. Secar la merluza y salpimentarla.;Paso 2. Cocer las verduras. Poner agua con la hoja de laurel lavada en una olla con rejilla para cocinar al vapor. Colocar las patatas sobre la rejilla y cocerlas durante unos 10 min.;Paso 3. Agregar el resto de los vegetales y cocer todo junto durante 10 min más; comprobar que están casi hechas y, si no, dejarlas unos minutos más.;Paso 4. Añadir el pescado: colocar las rodajas de merluza sobre las verduras y dejar que se cueza al vapor entre 4-6 min, dependiendo del grosor.;Paso 5. Hacer el refrito mientras se pelan los ajos y se cortan en láminas. Calentar ligeramente 75 ml de aceite de oliva suave, añadir el ajo y dejar que se dore, con suavidad, vigilando que no se quemen.;Paso 6. Apartar la mezcla del fuego, agregar el pimentón dulce y remover. Servir la merluza con los vegetales y regar con la salsa de pimentón y ajo."
+    },
+    {
+        "id": 3,
+        "nombre": "Tostada con palta",
+        "imagen": "./src/assets/img/tostadas-palta-pavo.jpg",
+        "titulo": "Ingredientes (1 porcion):",
+        "ingredientes": "1 palta;2 rebanadas de pan de avena;4 lonchas de pavo cocido;1 pizca de sésamo blanco;1 pizca de sésamo negro;3 gotas de salsa picante o tabasco;1 chorro de aceite de oliva;1 pizca de sal;1 pizca de pimienta negra molida",
+        "preparacion": "Paso 1. Tostar el pan de avena en el tostador. Hemos elegido pan de avena que tiene más fibra, pero puedes poner cualquier otro tipo de pan que te apetezca.;Paso 2. Moler la palta y agregar salsa picante con un chorro de aceite de oliva;Paso 3. Colocar la palta aliñada en las tostadas;Paso 4. Colocar lonchas de pavo cocido sobre la palta;Paso 5. Colocar sesamo blanco y negro"
+    },
+    {
+        "id": 4,
+        "nombre": "Verduras al horno con huevo poché",
+        "imagen": "./src/assets/img/huevos-pochados-con-salteado-de-verduras.jpg",
+        "titulo": "Ingredientes (2 porciones):",
+        "ingredientes": "4 huevos;1 manojo de espárragos verdes;150 g de porotos verdes;2-3 zanahorias;1 pimiento rojo;2-3 ramitas de perejil;Aceite de oliva, sal y pimienta",
+        "preparacion": "Paso 1. Limpiar y cortar todas las verduras. Limpiar los espárragos y cortar el pie leñoso. Lavar y despuntar los porotos. Pelar las zanahorias y cortar en tiras. Retirar el pedúnculo y las semillas y filamentos del pimiento y cortar también en tiras muy finas.;Paso 2. Añadir todas las verduras cortadas en la bandeja del horno. Salpimentar y rociar con un chorrito de aceite de oliva.;Paso 3. Asar en el horno, con el modo grill, durante unos 10-12 minutos hasta que se doren.;Paso 4. Cubrir con un cuadrado (15x15 cm) de film transparente un cuenco pequeño y cascar 1 huevo en el interior. Cerrar bien, y enrollar las puntas con la ayuda de una goma. Cocer, una vez que el agua esté hirviendo, durante unos 4 minutos. Repetir lo mismo con el resto de huevos.;Paso 5. Hervir las hojas de perejil en un poco de agua, previamente llevada a ebullición, durante unos segundos. Escurrir de nuevo y triturar con un poco de aceite.;Paso 6. Repartir las verduras asadas en los platos y colocar el huevo pochado en el centro. Añadir sal y pimienta. Incorporar el aceite de perejil y servir."
+    },
+    {
+        "id": 5,
+        "nombre": "Ternera salteada con brócoli, champiñones y pimiento verde",
+        "imagen": "./src/assets/img/ternera_salteada_con_brocoli_champinones_y_pimiento_verde.jpg",
+        "titulo": "Ingredientes (4 porciones):",
+        "ingredientes": "800 g de filetes de ternera en tiras;200 g de brócoli;150 g de champiñones;1 pimiento verde;1 cebolla tierna;2 dientes de ajo;4-5 cucharadas de salsa de soja;1 cucharada de semillas de sésamo;4 cucharadas de aceite de oliva virgen;Pimienta",
+        "preparacion": "Paso 1. Limpiar y preparar primero todas las hortalizas. Retirar el pedúnculo y las semillas y filamentos blancos del pimiento y cortar en tiras. Retirar la parte más verde y seca de la cebolla tierna, cortar por la mitad y luego en tiras. Separar el brócoli en ramitos, y pelar y picar los dientes de ajo.;Paso 2. Lavar los champiñones y cortar el tallo. Si están muy sucios, lavar muy rápido debajo del grifo, pero no dejar en remojo.;Paso 3. Hervir un cazo con agua y escaldar el brócoli durante unos 3-4 minutos. Escurrir y sumergir en agua fría al instante.;Paso 4. Calentar en una sartén 2 cucharadas de aceite. Asar la carne a fuego fuerte durante 1 minuto. Retirar y reservar.;Paso 5. Agregar el aceite restante a otra sartén e incorporar todas las hortalizas. Saltear al menos 3-minutos.;Paso 6. Añadir ajo y la salsa de soja a las hortalizas. Cocinar todo durante unos 2-3 minutos. Incorporar la carne, mezclar bien y añadir las semillas de sésamo. También se puede agregar una pizca de pimienta molida. ¡Y servir!"
+    },
+    {
+        "id": 6,
+        "nombre": "Crostinis de tártar de atún",
+        "imagen": "./src/assets/img/crostinis-tartar-atun.png",
+        "titulo": "Ingredientes (2 porciones):",
+        "ingredientes": "300 g de atún rojo;1/4 de cebolla roja;3 cucharadas de salsa de soja;1 cucharadita de wasabi;5 gotas de aceite de sésamo;Pimienta;1 baguette;Aceite de oliva",
+        "preparacion": "Paso 1. Congelar el atún fresco durante un mínimo de 72 horas. Descongelar en la nevera. Cortar el atún en dados pequeños con un cuchillo bien afilado. Pelar y picar la cebolla morada en brunoise.;Paso 2. Poner en un bol los dados de atún, la cebolla, 1 cucharadita de wasabi, 3 cucharadas de soja, 5 gotas de aceite de sésamo y una pizca de pimienta. Remover bien y reservar en la nevera.;Paso 3. Precalentar el horno a 250º C. Cortar la barra de pan en rebanadas y pincelarlas con ayuda de una brocha por ambos lados con aceite de oliva. Colocar el pan en una bandeja y hornear durante 10-15 minutos, o hasta que estén crujientes. Una vez que las rebanadas de pan estén tostadas, dejar que se enfríen unos minutos y luego repartir el tartar de atún rojo por las tostadas."
+    }
+]

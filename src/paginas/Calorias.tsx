@@ -51,7 +51,7 @@ function Calorias() {
               placeholder="80 kg"
               step={0.1}
               min={15}
-              max={600}
+              max={650}
             />
           </Form.Group>
           <Form.Group>
@@ -95,7 +95,7 @@ function Calorias() {
           </Form.Group>
           <Button className="mt-2" type="submit" variant="btn btn-outline-dark">Calcular</Button>
         </Form>
-        <h2>Las calorías que debes consumir para mantener el peso escrito es:</h2>
+        <h2 id="resultado">{resultado !== null ? "Las calorías que debes consumir para mantener el peso escrito es: " : ""}</h2>
         <h2 id="resultado">{resultado !== null ? resultado.toFixed(2) : ""}</h2>
       </div>
     </main>
