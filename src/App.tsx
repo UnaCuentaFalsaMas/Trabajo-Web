@@ -19,10 +19,10 @@ function App() {
       <Navbare />
 
       <Routes>
-        <Route path="/" element={<Inicio />} />
+        <Route path="/accedio" element={<Inicio />} />
         <Route path="/acerca" element={<Acerca />} />
         <Route path="/contacto" element={<Contacto />} />
-        <Route path="/acceder" element={<Accerder />} />
+        <Route path="/" element={<Accerder />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/comidas" element={<Comidas />} />
