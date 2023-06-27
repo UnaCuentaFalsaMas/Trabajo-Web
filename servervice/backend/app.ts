@@ -27,6 +27,13 @@ connection.connect(function (err: any) {
   console.log('Conexión establecida' + connection.threadId);
 });
 
+app.post('/leer', jsonParser, (req: any, res: any) => {
+    connection.query('select * from usuarios', function (error: any, results: any, fields: any) {
+        if (error) throw error;
+        res.send(JSON.stringify({ mensaje: true, resultado: results }));
+    });
+});
+
 app.post('/registro', jsonParser, (req: any, res: any) => {
   let email = req.body.email; // Obtener el valor del campo 'email' del cuerpo de la solicitud
   let password = req.body.password; // Obtener el valor del campo 'password' del cuerpo de la solicitud
@@ -40,7 +47,7 @@ app.post('/registro', jsonParser, (req: any, res: any) => {
 
   // Realizar una consulta a la base de datos para verificar si existe un usuario con el email y password proporcionados
   connection.query(
-    'select * from usuarios where email=? and contrasenia=? and llave=?',
+    'insert into usuarios (email, contrasenia, llave) values (?, ?, ?)',
     [email, password, llave],
     function (error: any, results: any, fields: any) {
       if (error) throw error;
