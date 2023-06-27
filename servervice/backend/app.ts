@@ -15,8 +15,8 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  port: 3306,
-  database: 'LaWeb',
+  port: 3307,
+  database: 'proyecto', 
 });
 
 connection.connect(function (err: any) {
@@ -47,7 +47,7 @@ app.put('/registro', jsonParser, (req: any, res: any) => {
 
   // Realizar una consulta a la base de datos para verificar si existe un usuario con el email y password proporcionados
   connection.query(
-    'insert into usuario (email, contrasenia, llave) values (?, ?, ?)',
+    'INSERT INTO usuario (email, contrasenia, llave) values (?, ?, ?)',
     [email, password, llave],
     function (error: any, results: any, fields: any) {
       if (error) throw error;
@@ -61,7 +61,7 @@ app.put('/registro', jsonParser, (req: any, res: any) => {
           }
         );
       }
-      
+
       res.send(JSON.stringify({ mensaje: true, resultado: results })); // Enviar una respuesta en formato JSON
     }
   );
