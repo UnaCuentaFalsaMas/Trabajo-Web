@@ -2,12 +2,13 @@
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/img/logo2.jpeg';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 function Acceder() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [respuesta, setRespuesta] = useState('');
 
   const enviar = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
@@ -15,6 +16,7 @@ function Acceder() {
     // Realizar una solicitud GET al servidor para validar el correo electrónico
     axios.get(`http://localhost:5001/leer?email=${email}`).then((response) => {
         const usuario = response.data.resultado[0];
+      
 
         if (usuario) {
           // El correo electrónico existe, verificar la contraseña
@@ -23,15 +25,18 @@ function Acceder() {
           if (usuario.contrasenia === password) {
             // La contraseña es correspondiente, puedes continuar con la lógica de inicio de sesión
             console.log('Inicio de sesión exitoso');
+            setRespuesta('Inicio de sesión exitoso');
             
           } else {
             // La contraseña no es correspondiente, muestra un mensaje de error o realiza alguna acción adicional
             console.log('Contraseña incorrecta');
+            setRespuesta('Contraseña o correo incorrecto');
             
           }
         } else {
           // El correo electrónico no existe, muestra un mensaje de error o realiza alguna acción adicional
           console.log('El correo electrónico no existe');
+          setRespuesta('Contraseña o correo incorrecto');
         }
       })
       .catch((error) => {
@@ -75,6 +80,11 @@ function Acceder() {
           <Button variant="btn btn-outline-dark" type="submit">
             Iniciar Sesión
           </Button>
+     
+           <div>
+            {respuesta? <p>{respuesta}</p> : null}
+           </div>
+  
           <br />
           <Link to="/registro">Registrarse</Link>
         </form>
