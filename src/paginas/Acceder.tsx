@@ -19,7 +19,7 @@ function Acceder() {
     event.preventDefault();
 
     axios
-      .get(`http://localhost:3000/leer?email=${email}`)
+      .get(`http://localhost:3000/acceder?email=${email}contrasenia=${password}`)
       .then((response) => {
         const usuario = response.data.resultado[0];
         

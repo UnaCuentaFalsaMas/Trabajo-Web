@@ -1,11 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var encriptacion_1 = require("./encriptacion");
 var express = require('express');
 var mysql = require('mysql');
 var iprequest = require('request-ip');
 var app = express();
 var cors = require('cors');
 var bodyParser = require('body-parser');
+var cripto = require('crypto');
 var jsonParser = bodyParser.json();
 app.use(cors());
 var connection = mysql.createConnection({
@@ -24,21 +26,25 @@ connection.connect(function (err) {
 });
 app.get('/leer', jsonParser, function (req, res) {
     var email = req.body.email;
-    // Validate email format
+    //Prevencion de SQL Injection
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-        res.send(JSON.stringify({ "mensaje": false, "resultado": null, "error": "Formato de email incorrecto" }));
+        res.send(JSON.stringify({
+            mensaje: false,
+            resultado: null,
+            error: 'Formato de email incorrecto',
+        }));
         return;
     }
     connection.query('SELECT * FROM usuario WHERE email = ?', [email], function (error, results, fields) {
         if (error)
             throw error;
         if (results) {
-            res.send(JSON.stringify({ "mensaje": true, "resultado": results }));
+            res.send(JSON.stringify({ mensaje: true, resultado: results }));
         }
         else {
-            console.log("entro");
-            res.send(JSON.stringify({ "mensaje": false, "resultado": null }));
+            console.log('entro');
+            res.send(JSON.stringify({ mensaje: false, resultado: null }));
         }
     });
 });
@@ -51,13 +57,62 @@ app.put('/registro', jsonParser, function (req, res) {
     var edad = req.body.edad;
     var altura = req.body.altura;
     var peso = req.body.peso;
-    var llave = '1';
+    var salt = cripto.randomBytes(16).toString('hex');
+    console.log("Salt\n:" + salt + "\n");
+    var hashed = (0, encriptacion_1.encriptar)(password, salt);
     var query = 'INSERT INTO usuario (email, contrasenia, llave, nombre, apellido, genero, edad, altura, peso) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
-    var values = [email, password, llave, nombre, apellido, genero, edad, altura, peso];
+    var values = [
+        email,
+        hashed,
+        salt,
+        nombre,
+        apellido,
+        genero,
+        edad,
+        altura,
+        peso,
+    ];
     connection.query(query, values, function (error, results, fields) {
         if (error)
             throw error;
         res.send(JSON.stringify({ mensaje: true, resultado: results }));
+    });
+});
+app.post('/acceder', jsonParser, function (req, res) {
+    var email = req.body.email;
+    var password = req.body.password;
+    //Prevencion de SQL Injection
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        res.send(JSON.stringify({
+            mensaje: false,
+            resultado: null,
+            error: 'Formato de email incorrecto',
+        }));
+        return;
+    }
+    var sql = 'SELECT * FROM usuario WHERE email=?';
+    connection.query(sql, [email], function (err, data, fields) {
+        if (err)
+            throw err;
+        if (data.length > 0) {
+            console.log('Salr BD: \n' +
+                data[0].llave +
+                '\nContraseña BD: \n' +
+                data[0].contrasenia +
+                '\nContraseña formulario: \n' +
+                (0, encriptacion_1.encriptar)(password, data[0].llave));
+            if (data[0].contrasenia == (0, encriptacion_1.encriptar)(password, data[0].llave)) {
+                res.send(JSON.stringify({ mensaje: true, resultado: data }));
+            }
+            else {
+                res.send(JSON.stringify({
+                    mensaje: false,
+                    resultado: null,
+                    error: 'Contraseña o correo son incorrecta',
+                }));
+            }
+        }
     });
 });
 var configuracion = {
