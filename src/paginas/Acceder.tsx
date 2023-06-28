@@ -1,46 +1,51 @@
-//import React from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import Logo from '../assets/img/logo2.jpeg';
-import { useState } from 'react';
 import axios from 'axios';
+import AuthContext from '../componentes/AuthContext';
+
+
 
 function Acceder() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [respuesta, setRespuesta] = useState('');
+  const [mensaje, setMensaje] = useState('');
+  const [contraseniaError, setContraseniaError] = useState(false);
+  const authContext = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const enviar = (event: { preventDefault: () => void; }) => {
+  const enviar = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Realizar una solicitud GET al servidor para validar el correo electrónico
-    axios.get(`http://localhost:5001/leer?email=${email}`).then((response) => {
+    axios
+      .get(`http://localhost:3000/leer?email=${email}`)
+      .then((response) => {
         const usuario = response.data.resultado[0];
-      
-
+        
         if (usuario) {
           // El correo electrónico existe, verificar la contraseña
-          console.log(usuario.contrasenia);
-          console.log(password);
           if (usuario.contrasenia === password) {
-            // La contraseña es correspondiente, puedes continuar con la lógica de inicio de sesión
-            console.log('Inicio de sesión exitoso');
-            setRespuesta('Inicio de sesión exitoso');
-            
+            // La contraseña es correcta
+            authContext?.login(usuario);
+            console.log("si");
+            setMensaje('Inicio de sesión exitoso');
+            navigate('/inicio');
           } else {
-            // La contraseña no es correspondiente, muestra un mensaje de error o realiza alguna acción adicional
-            console.log('Contraseña incorrecta');
-            setRespuesta('Contraseña o correo incorrecto');
-            
+            // La contraseña no es correcta
+            setMensaje('Contraseña o correo incorrectos');
+            setContraseniaError(true);
           }
         } else {
-          // El correo electrónico no existe, muestra un mensaje de error o realiza alguna acción adicional
-          console.log('El correo electrónico no existe');
-          setRespuesta('Contraseña o correo incorrecto');
+          // El correo electrónico no existe
+          setMensaje('Contraseña o correo incorrectos');
+          setContraseniaError(true);
         }
       })
       .catch((error) => {
+        // error
         console.error('Error al obtener el usuario:', error);
+        setMensaje('Error al obtener el usuario');
       });
   };
 
@@ -58,7 +63,11 @@ function Acceder() {
               name="email"
               placeholder="Ingresar Email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) =>{
+                setEmail(e.target.value);
+                setContraseniaError(false);
+              }}
+              isInvalid={contraseniaError}
             />
           </Form.Group>
           <Form.Group>
@@ -70,21 +79,19 @@ function Acceder() {
               name="password"
               placeholder="Ingresar Contraseña"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setContraseniaError(false); // Reiniciar el estado de error de contraseña al escribir en el campo
+              }}
+              isInvalid={contraseniaError} // Marcar el campo de contraseña como inválido si hay un error de contraseña
             />
+            <Form.Control.Feedback type="invalid">{mensaje}</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
+          
           <br />
           <Button variant="btn btn-outline-dark" type="submit">
             Iniciar Sesión
           </Button>
-     
-           <div>
-            {respuesta? <p>{respuesta}</p> : null}
-           </div>
-  
           <br />
           <Link to="/registro">Registrarse</Link>
         </form>

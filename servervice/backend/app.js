@@ -47,24 +47,17 @@ app.put('/registro', jsonParser, function (req, res) {
     var edad = req.body.edad; // Obtener el valor del campo 'edad' del cuerpo de la solicitud
     var altura = req.body.altura; // Obtener el valor del campo 'altura' del cuerpo de la solicitud
     var peso = req.body.peso; // Obtener el valor del campo 'peso' del cuerpo de la solicitud
-    var llave = req.body.llave; // Obtener el valor del campo 'llave' del cuerpo de la solicitud
+    var llave = '1'; // Obtener el valor del campo 'llave' del cuerpo de la solicitud
     // Realizar una consulta a la base de datos para verificar si existe un usuario con el email y password proporcionados
-    connection.query('INSERT INTO usuario (email, contrasenia, llave) values (?, ?, ?)', [email, password, llave], function (error, results, fields) {
+    connection.query('INSERT INTO usuario (email, contrasenia, llave, nombre, apellido, genero, edad, altura, peso) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', [email, password, llave, nombre, apellido, genero, edad, altura, peso], function (error, results, fields) {
         if (error)
             throw error;
-        else {
-            connection.query("INSERT INTO id_usuario (id_usuario, nombre, apellido, genero, edad, altura, peso) VALUES (SELECT id_usuario FROM usuario WHERE email = '?', ?, ?, ?, ?, ?, ?)", [email, nombre, apellido, genero, edad, altura, peso], function (error, results) {
-                if (error)
-                    throw error;
-                res.send(JSON.stringify({ mensaje: true, resultado: results }));
-            });
-        }
         res.send(JSON.stringify({ mensaje: true, resultado: results })); // Enviar una respuesta en formato JSON
     });
 });
 var configuracion = {
     hostname: '127.0.0.1',
-    port: 5001,
+    port: 3000,
 };
 app.listen(configuracion.port, function () {
     console.log("Conectando al servidor http://localhost:".concat(configuracion.port));

@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import AuthContext from '../componentes/AuthContext';
 
 function Registro() {
   const [validated, setValidated] = useState(false);
+  const navigate = useNavigate();
+  const authContext = useContext(AuthContext);
 
   const handleSubmit = (event: { preventDefault: () => void; stopPropagation: () => void; currentTarget: any; }) => {
     event.preventDefault();
@@ -27,7 +31,7 @@ function Registro() {
         nombre: form.elements.nombre.value,
         apellido: form.elements.apellido.value,
         usuario: form.elements.usuario.value,
-        mail: form.elements.mail.value,
+        email: form.elements.email.value,
         password: form.elements.password.value,
         genero: form.elements.genero.value,
         edad: form.elements.edad.value,
@@ -36,18 +40,20 @@ function Registro() {
       };
 
       axios
-        .post('http://localhost:3000/api/registros', data, {
+        .put('http://localhost:3000/registro', data, {
           headers: {
             'Content-Type': 'application/json',
           },
         })
         .then((response) => {
-          if (response.status === 201) {
+          if (response.status === 200) {
             setValidated(true);
             console.log('Registro guardado exitosamente');
             form.reset();
+            authContext?.login(response.data.resultado[0]);
+            navigate('/inicio');
           } else {
-            console.error('Error al guardar el registro');
+            console.log('Error al guardar el registro');
           }
         })
         .catch((error) => {
@@ -105,8 +111,8 @@ function Registro() {
             <Form.Control
               required
               type="email"
-              id="mail"
-              name="mail"
+              id="email"
+              name="email"
               placeholder="Ingresar Email"
             />
           </Form.Group>
