@@ -51,7 +51,7 @@ function Registro() {
             console.log('Registro guardado exitosamente');
             form.reset();
             authContext?.login(response.data.resultado[0]);
-            navigate('/inicio');
+            navigate('/');
           } else {
             console.log('Error al guardar el registro');
           }
