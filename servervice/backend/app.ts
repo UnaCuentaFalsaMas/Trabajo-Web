@@ -28,10 +28,25 @@ connection.connect(function (err: any) {
 });
 
 app.get('/leer', jsonParser, (req: any, res: any) => {
-    connection.query('select * from usuarios', function (error: any, results: any, fields: any) {
-        if (error) throw error;
-        res.send(JSON.stringify({ mensaje: true, resultado: results }));
-    });
+  const email = req.query.email; // Obtener el valor del parámetro 'email' de la solicitud GET
+  
+  connection.query(
+    'SELECT * FROM usuario WHERE email = ?',
+    [email],
+    function (error: any, results: any, fields: any) {
+      //console.log(results[0].contrasenia);
+      if (error) throw error;
+
+      if(results){
+        
+        res.send(JSON.stringify({"mensaje":true,"resultado":results}));
+      } else {
+        console.log("entro");
+        res.send(JSON.stringify({"mensaje":false,"resultado":null})); 
+      }
+      
+    }
+  );
 });
 
 app.put('/registro', jsonParser, (req: any, res: any) => {
@@ -75,3 +90,7 @@ const configuracion = {
 app.listen(configuracion.port, () => {
   console.log(`Conectando al servidor http://localhost:${configuracion.port}`);
 });
+
+declare module './app.js' {
+  export function get(email: string): boolean;
+}
