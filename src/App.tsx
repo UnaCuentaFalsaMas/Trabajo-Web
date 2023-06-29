@@ -12,7 +12,12 @@ import Calculadora from './paginas/Calculadora';
 import Calorias from './paginas/Calorias';
 import Ejercicios from './paginas/Ejercicios';
 import Recetas from './paginas/Recetas';
+import Admin from './paginas/Admin';
+import Crear from './paginas/Crear';
+import Eliminar from './paginas/Eliminar';
+import Editar from './paginas/Editar';
 import { AuthProvider } from './componentes/AuthContext';
+
 
 function App() {
   return (
@@ -26,12 +31,17 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/" element={<Acceder />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/acceder" element={<Acceder />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/comidas" element={<Comidas />} />
         <Route path="/calculadora" element={<Calculadora />} />
         <Route path="/calorias" element={<Calorias />} />
         <Route path="/ejercicios" element={<Ejercicios />} />
         <Route path="/recetas" element={<Recetas />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/crear" element={<Crear />} />
+        <Route path="/eliminar" element={<Eliminar />} />
+        <Route path="/editar" element={<Editar />} />
       </Routes>
       <Pie />
       </AuthProvider>

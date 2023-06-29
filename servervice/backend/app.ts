@@ -66,6 +66,7 @@ app.put('/registro', jsonParser, (req: any, res: any) => {
   let edad = req.body.edad;
   let altura = req.body.altura;
   let peso = req.body.peso;
+  
   let salt = cripto.randomBytes(16).toString('hex');
   console.log("Salt\n"+salt+"\n");
   let hashed = encriptar(password, salt);
@@ -82,6 +83,7 @@ app.put('/registro', jsonParser, (req: any, res: any) => {
     edad,
     altura,
     peso,
+    
   ];
 
   connection.query(
@@ -139,6 +141,87 @@ app.post('/acceder', jsonParser, function (req: any, res: any) {
       }
     }
   });
+});
+
+app.put('/crearAdmin', jsonParser, (req: any, res: any) => {
+  let email = req.body.email;
+  let password = req.body.password;
+  let nombre = req.body.nombre;
+  let apellido = req.body.apellido;
+  let admin = 1;
+  
+  let salt = cripto.randomBytes(16).toString('hex');
+  console.log("Salt\n"+salt+"\n");
+  let hashed = encriptar(password, salt);
+
+  const query =
+    'INSERT INTO usuario (email, contrasenia, llave, nombre, apellido, admin) VALUES (?, ?, ?, ?, ?, ?)';
+  const values = [
+    email,
+    hashed,
+    salt,
+    nombre,
+    apellido,
+    admin,
+  ];
+
+  connection.query(
+    query,
+    values,
+    function (error: any, results: any, fields: any) {
+      if (error) throw error;
+
+      res.send(JSON.stringify({ mensaje: true, resultado: results }));
+    }
+  );
+});
+
+app.delete('/delete', jsonParser, function (req: any, res: any) {
+  let email = req.body;
+
+  var sql = 'DELETE FROM usuario WHERE email=?';
+  connection.query(sql, [email], function (err: any, data: any, fields: any) {
+      if (err) {
+        console.error('Error al eliminar los datos:', err);
+        res.status(500).json({ mensaje: 'Error al eliminar los datos' });
+      } else {
+        console.log('Datos eliminados correctamente');
+        res.json({ mensaje: 'Datos eliminados correctamente' });
+      }
+    }
+  );
+});
+
+app.put('/editarCuenta', jsonParser, (req: any, res: any) => {
+  let nombre = req.body.nombre;
+  let email = req.body.email;
+  const query = 'UPDATE usuario SET nombre=? WHERE email=?';
+  const values = [nombre, email];
+
+  connection.query(query, values, function (error: any, results: any, fields: any) {
+    if (error) throw error;
+
+    res.send(JSON.stringify({ mensaje: true, resultado: results }));
+  });
+});
+
+app.get('/mostrar', jsonParser, (req: any, res: any) => {
+  const email = req.body.email;
+
+  connection.query(
+    'SELECT * FROM usuario WHERE email = ?',
+    [email],
+    function (error: any, results: any, fields: any) {
+      if (error) throw error;
+
+      if (results) {
+        res.send(JSON.stringify({ mensaje: true, resultado: results }));
+      } else {
+        console.log('entro');
+        res.send(JSON.stringify({ mensaje: false, resultado: null }));
+      }
+    }
+  );
 });
 
 const configuracion = {

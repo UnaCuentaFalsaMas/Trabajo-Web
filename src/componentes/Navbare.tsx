@@ -44,6 +44,16 @@ function Navbare(_props: NavbarProps) {
                     <NavLink to="/contacto" className="nav-link letra">
                         Contacto
                     </NavLink>
+                    {authContext?.isAdmin ? (
+                      <NavLink to="/admin" className="nav-link letra">
+                       Administrador
+                      </NavLink>
+                    ) : (
+                      <NavLink to="/inicio" className="nav-link letra">
+                       usuario
+                      </NavLink>
+                    )}
+                    
                     <Nav.Link onClick={handleLogout}>Cerrar sesión</Nav.Link>
                 </>
               ) : (

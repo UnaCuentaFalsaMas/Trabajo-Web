@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../componentes/AuthContext';
 
-function Registro() {
+function Crear() {
   const [validated, setValidated] = useState(false);
   const navigate = useNavigate();
   const authContext = useContext(AuthContext);
@@ -33,14 +33,11 @@ function Registro() {
         usuario: form.elements.usuario.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
-        genero: form.elements.genero.value,
-        edad: form.elements.edad.value,
-        altura: form.elements.altura.value,
-        peso: form.elements.peso.value,
+        admin: 1,
       };
 
       axios
-        .put('http://localhost:3000/registro', data, {
+        .put('http://localhost:3000/crearAdmin', data, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -50,15 +47,8 @@ function Registro() {
             setValidated(true);
             console.log('Registro guardado exitosamente');
             form.reset();
-            
-            if(authContext?.isAdmin) {
-              //console.log(response.data.resultado[0].admin); 
-              navigate('/admin');
-            } else{
-              authContext?.login(response.data.resultado[0]);
-              navigate('/inicio');
-            }
-            
+            authContext?.login(response.data.resultado[0]);
+            navigate('/admin');
           } else {
             console.log('Error al guardar el registro');
           }
@@ -72,7 +62,7 @@ function Registro() {
   return (
     <main>
       <br />
-      <h1 style={{ textAlign: 'center' }}>Registro</h1>
+      <h1 style={{ textAlign: 'center' }}>Registrar administrador</h1>
       <div className="container d-flex flex-column align-items-center mt-5">
         <Form
           className="shadow p-3 mb-5 bg-white rounded"
@@ -143,60 +133,6 @@ function Registro() {
               placeholder="Contraseña"
             />
           </Form.Group>
-          <Form.Group>
-            <Form.Label as="legend">Género</Form.Label>
-            <Form.Check
-              type="radio"
-              name="genero"
-              id="generoM"
-              label="Masculino"
-              value="Masculino"
-            />
-            <Form.Check
-              type="radio"
-              name="genero"
-              id="generoF"
-              label="Femenino"
-              value="Femenino"
-            />
-            <Form.Check
-              type="radio"
-              name="genero"
-              id="generoOtro"
-              label="Otro"
-              value="Otro"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Edad</Form.Label>
-            <Form.Control
-              required
-              type="number"
-              id="edad"
-              name="edad"
-              placeholder="Edad"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Altura Ejemplo: ( 180cm )</Form.Label>
-            <Form.Control
-              required
-              type="number"
-              id="altura"
-              name="altura"
-              placeholder="Altura"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Peso Kg</Form.Label>
-            <Form.Control
-              required
-              type="number"
-              id="peso"
-              name="peso"
-              placeholder="Peso"
-            />
-          </Form.Group>
           <br />
           <Button type="submit" variant="btn btn-outline-dark">
             Registrarse
@@ -207,4 +143,4 @@ function Registro() {
   );
 }
 
-export default Registro;
+export default Crear;

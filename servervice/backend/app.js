@@ -58,7 +58,7 @@ app.put('/registro', jsonParser, function (req, res) {
     var altura = req.body.altura;
     var peso = req.body.peso;
     var salt = cripto.randomBytes(16).toString('hex');
-    console.log("Salt\n:" + salt + "\n");
+    console.log("Salt\n" + salt + "\n");
     var hashed = (0, encriptacion_1.encriptar)(password, salt);
     var query = 'INSERT INTO usuario (email, contrasenia, llave, nombre, apellido, genero, edad, altura, peso) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
     var values = [
@@ -113,6 +113,55 @@ app.post('/acceder', jsonParser, function (req, res) {
                 }));
             }
         }
+    });
+});
+app.put('/crearAdmin', jsonParser, function (req, res) {
+    var email = req.body.email;
+    var password = req.body.password;
+    var nombre = req.body.nombre;
+    var apellido = req.body.apellido;
+    var admin = 1;
+    var salt = cripto.randomBytes(16).toString('hex');
+    console.log("Salt\n" + salt + "\n");
+    var hashed = (0, encriptacion_1.encriptar)(password, salt);
+    var query = 'INSERT INTO usuario (email, contrasenia, llave, nombre, apellido, admin) VALUES (?, ?, ?, ?, ?, ?)';
+    var values = [
+        email,
+        hashed,
+        salt,
+        nombre,
+        apellido,
+        admin,
+    ];
+    connection.query(query, values, function (error, results, fields) {
+        if (error)
+            throw error;
+        res.send(JSON.stringify({ mensaje: true, resultado: results }));
+    });
+});
+app.delete('/delete', jsonParser, function (req, res) {
+    var email = req.body;
+    var sql = 'DELETE FROM usuario WHERE email=?';
+    connection.query(sql, [email], function (err, data, fields) {
+        if (err) {
+            console.error('Error al eliminar los datos:', err);
+            res.status(500).json({ mensaje: 'Error al eliminar los datos' });
+        }
+        else {
+            console.log('Datos eliminados correctamente');
+            res.json({ mensaje: 'Datos eliminados correctamente' });
+        }
+    });
+});
+app.put('/editarCuenta', jsonParser, function (req, res) {
+    var nombre = req.body.nombre;
+    var email = req.body.email;
+    var query = 'UPDATE usuario SET nombre=? WHERE email=?';
+    var values = [nombre, email];
+    connection.query(query, values, function (error, results, fields) {
+        if (error)
+            throw error;
+        res.send(JSON.stringify({ mensaje: true, resultado: results }));
     });
 });
 var configuracion = {

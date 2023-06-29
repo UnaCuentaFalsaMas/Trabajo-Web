@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/img/logo2.jpeg';
@@ -12,27 +12,58 @@ function Acceder() {
   const [contraseniaError, setContraseniaError] = useState(false);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
+  const [captchaValue, setCaptchaValue] = useState('');
+  const [codigoIngresado, setCodigoIngresado] = useState('');
+  const [captchaError, setCaptchaError] = useState(false);
+
+  const generarCaptcha = () => {
+    const caracteresPermitidos = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let codigoCaptcha = '';
+  
+    for (let i = 0; i < 6; i++) {
+      const indiceAleatorio = Math.floor(Math.random() * caracteresPermitidos.length);
+      codigoCaptcha += caracteresPermitidos.charAt(indiceAleatorio);
+    }
+  
+    setCaptchaValue(codigoCaptcha);
+  };
+  
+  useEffect(() => {
+    generarCaptcha();
+  }, []);
 
   const enviar = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (codigoIngresado !== captchaValue) {
+      setCaptchaError(true);
+      setMensaje('Código CAPTCHA incorrecto');
+      return;
+    }
+
     try {
       const response = await axios.post('http://localhost:3000/acceder', { email, password }); // Send the email and password in the request body
       const usuario = response.data.resultado;
-      console.log(response.data.mensaje);
+      
       if (response.data.mensaje) {
-        // The user exists
+        // existe usuario
         authContext?.login(usuario);
-        console.log('si');
+        
+        if(usuario[0].admin === 1) {
+          console.log(usuario[0].admin);
+          authContext?.admin(); 
+        } else{
+          authContext?.usuario(); 
+        }
         setMensaje('Inicio de sesión exitoso');
         navigate('/inicio');
       } else {
-        // The password is incorrect
+        // no existe usuario
         setMensaje('Contraseña o correo incorrectos');
         setContraseniaError(true);
       }
     } catch (error) {
-      // Handle the error
+      // error
       console.error('Error al obtener el usuario:', error);
       setMensaje('Error al obtener el usuario');
     }
@@ -75,6 +106,28 @@ function Acceder() {
               isInvalid={contraseniaError}
             />
             <Form.Control.Feedback type="invalid">{mensaje}</Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>CAPTCHA</Form.Label>
+            <Form.Control
+              required
+              readOnly
+              type="text"
+              value={captchaValue}
+              
+            />
+          </Form.Group>  
+
+          <Form.Group>
+            <Form.Label>Ingrese el código CAPTCHA</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              value={codigoIngresado}
+              onChange={(e) => setCodigoIngresado(e.target.value)}
+              isInvalid={captchaError}
+            />
           </Form.Group>
 
           <br />

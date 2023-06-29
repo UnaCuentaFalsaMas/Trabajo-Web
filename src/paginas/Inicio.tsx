@@ -1,5 +1,4 @@
 
-
 import LogoIMC from '../assets/img/IMC.jpg';
 import LogoAlimentacion from '../assets/img/alimentacion.jpg';
 import LogoCalorias from '../assets/img/calorias.jpg';
